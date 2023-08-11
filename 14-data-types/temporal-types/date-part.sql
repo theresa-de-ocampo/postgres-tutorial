@@ -12,7 +12,7 @@
  * day
  * hour
  * minute
- * secound
+ * second
  * microseconds
  * milliseconds
  * dow

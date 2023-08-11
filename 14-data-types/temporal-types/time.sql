@@ -12,6 +12,8 @@ VALUES
   ('Afternoon', '13:00:00', '17:00:00'),
   ('Night', '18:00:00', '22:00:00');
 
+-- Besides the TIME data type, Postgres provides TIME with time zone data type.
+
 SELECT * FROM work_shift;
 
 SELECT CURRENT_TIME;

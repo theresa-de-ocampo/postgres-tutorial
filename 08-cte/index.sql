@@ -46,6 +46,26 @@ INNER JOIN cte_rental
 	USING (staff_id) ;
 
 -- TODO: Using CTE with a window function
+	
+SELECT * FROM staff;
+
+ SELECT staff_id,
+        COUNT(rental_id) rental_count
+    FROM   rental
+    GROUP  BY staff_id
+    
+SELECT
+  count(rental_id) rental_count,
+  first_name,
+  last_name
+FROM
+  rental
+INNER JOIN
+  staff USING (staff_id)
+GROUP BY
+  staff_id;
+
+SELECT * FROM rental;
 
 
 

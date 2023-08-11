@@ -46,6 +46,7 @@ SELECT timezone('Europe/Berlin', '2023-05-01 18:21:00');
 -- When we pass timestamp to timezone as a string, Postgres casts it to timestamptz implicitly.
 -- But is it better to cast it implicitly.
 SELECT timezone('Europe/Berlin', '2023-05-01 18:21:00'::TIMESTAMPTZ);
+SELECT timezone('Europe/Berlin', TIMESTAMPTZ '2023-05-01 18:21:00');
 
 
 

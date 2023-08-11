@@ -47,7 +47,7 @@ SELECT
 FROM
   employee;
 
--- Calculate ages in years, months, and days
+-- Calculate age in years, months, and days
 SELECT
   employee_id,
   first_name,

@@ -3,7 +3,7 @@
 -- scale - number of digits in the fraction part.
 
 -- If you omit both precision and scale,
--- you can store any precision and scale up to the limit of precision and scale.
+-- you can store any precision and scale up to Postgres' limit of precision and scale.
 -- NUMERIC
 
 -- If you store a value with a scale greater than the declared scale of the NUMERIC column,
