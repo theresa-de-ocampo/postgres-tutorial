@@ -6,8 +6,8 @@ CREATE TABLE "order" (
 INSERT INTO "order" (info)
 VALUES
   ('{"customer": "Teriz De Ocampo", "items": {"product": "Doritos", "qty": 2 }}'),
-  ('{ "customer": "Josh William", "items": {"product": "Toy Car","qty": 1}}'),
-  ('{ "customer": "Mary Clark", "items": {"product": "Toy Train","qty": 2}}');
+  ('{"customer": "Josh William", "items": {"product": "Toy Car", "qty": 1}}'),
+  ('{"customer": "Mary Clark", "items": {"product": "Toy Train", "qty": 2}}');
  
 INSERT INTO "order" (info)
 VALUES ('{"customer": "Thita De Ocampo", "items": {"product": {"name": "Diswashing Liquid", "qty": 2}}}');

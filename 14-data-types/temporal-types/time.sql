@@ -16,8 +16,9 @@ VALUES
 
 SELECT * FROM work_shift;
 
+-- To get the current time with time zone, you use the CURRENT_TIME function
 SELECT CURRENT_TIME;
-SELECT CURRENT_TIME(1); -- ??
+SELECT CURRENT_TIME(2); -- ??
 SELECT LOCALTIME;
 
 -- Convert time with a different time zone:

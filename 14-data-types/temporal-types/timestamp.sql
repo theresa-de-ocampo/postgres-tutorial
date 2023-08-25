@@ -26,6 +26,7 @@ VALUES ('2023-05-01 19:10:25-07', '2023-05-01 19:10:25-07');
 
 SELECT * FROM timestamp_demo;
 
+-- ALTER DATABASE db_name
 SET TIMEZONE = 'Asia/Manila';
 
 -- Postgres extension
@@ -37,6 +38,8 @@ SELECT current_timestamp;
 -- To get the current time without date
 SELECT current_time;
 
+SELECT timezone('America/Los_Angeles', now());
+
 -- To get the time of the day in string format
 SELECT timeofday();
 
@@ -44,7 +47,7 @@ SELECT timeofday();
 SELECT timezone('Europe/Berlin', '2023-05-01 18:21:00');
 
 -- When we pass timestamp to timezone as a string, Postgres casts it to timestamptz implicitly.
--- But is it better to cast it implicitly.
+-- But is it better to cast it explicitly.
 SELECT timezone('Europe/Berlin', '2023-05-01 18:21:00'::TIMESTAMPTZ);
 SELECT timezone('Europe/Berlin', TIMESTAMPTZ '2023-05-01 18:21:00');
 

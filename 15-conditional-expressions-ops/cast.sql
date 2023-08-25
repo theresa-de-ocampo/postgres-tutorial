@@ -28,6 +28,7 @@ VALUES (1), (2), (3);
 
 SELECT * FROM rating;
 
+-- The tilde (~) character is used as an operator to perform a regular expression match
 -- E before the string indicates that it is an escape string.
 -- Backslashes are treated as escape characters.
 -- \\ was used to escape the backslash in order to represent an acutal backslash.

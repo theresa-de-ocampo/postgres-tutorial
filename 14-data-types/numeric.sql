@@ -18,7 +18,9 @@ CREATE TABLE products(
 INSERT INTO products (name, price)
 VALUES
   ('Phone', 500.215),
-  ('Tablet', 500.214);
+  ('Tablet', 500.214),
+  ('Laptop', 600.215);
+
 
 SELECT * FROM products;
 

@@ -39,3 +39,20 @@ VALUES
   ('Lenovo Thinkpad', 2),
   ('iPad', 3),
   ('Kindle Fire', 3);
+
+SELECT * FROM product_03_demo
+NATURAL JOIN category_03_demo;
+
+-- You should avoid NATURAL JOIN whenever possible because sometimes it may cause an unexpected result.
+-- Both tables also have another column called last update which cannot be used for the join.
+SELECT * FROM city
+NATURAL JOIN country;
+
+
+
+
+
+
+
+
+
