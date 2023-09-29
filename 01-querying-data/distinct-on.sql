@@ -35,3 +35,21 @@ FROM
 ORDER BY
   person_id,
   effective_date DESC;
+  
+
+SELECT
+  *
+FROM
+  (
+    SELECT
+      *,
+      ROW_NUMBER() OVER (
+        PARTITION BY person_id
+        ORDER BY effective_date DESC
+      ) AS address_row
+    FROM
+      address_history
+  ) AS address_history_with_row_number
+WHERE
+  address_row = 1;
+  

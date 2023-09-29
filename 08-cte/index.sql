@@ -24,7 +24,6 @@ ORDER BY
 	title ;
 
 -- Joining a CTE with a table
-SELECT * FROM rental LIMIT 100 ;
 
 WITH cte_rental AS (
 	SELECT
@@ -43,17 +42,9 @@ SELECT
 FROM
 	staff 
 INNER JOIN cte_rental
-	USING (staff_id) ;
+	USING (staff_id);
 
--- TODO: Using CTE with a window function
-	
-SELECT * FROM staff;
 
- SELECT staff_id,
-        COUNT(rental_id) rental_count
-    FROM   rental
-    GROUP  BY staff_id
-    
 SELECT
   count(rental_id) rental_count,
   first_name,
@@ -65,7 +56,9 @@ INNER JOIN
 GROUP BY
   staff_id;
 
-SELECT * FROM rental;
+
+-- TODO: Using CTE with a window function
+SELECT * FROM film;
 
 
 

@@ -1,3 +1,5 @@
+-- https://medium.com/kkempin/postgresqls-lateral-join-bfd6bd0199df
+
 CREATE TABLE order_l (
 	order_id SERIAL PRIMARY KEY,
 	user_id INTEGER,
@@ -63,7 +65,7 @@ LEFT JOIN LATERAL
  * This is because in Postgres, the JOIN clause must be terminated by either an
  * ON clause, a USING clause, or a WHERE clause. In a LATERAL JOIN, the ON clause
  * is often specified as "ON true" to indicate that there is no specific JOIN 
- * condition, but the clause itself is still required to termiante the JOIN clause.
+ * condition, but the clause itself is still required to terminate the JOIN clause.
  */
 
 /**
@@ -149,6 +151,7 @@ INNER JOIN LATERAL
 --FROM
 --	order_l 
 --GROUP BY user_id ;
-
 	
+-- Other sample scenario for LATERAL JOIN: conversions
+-- https://www.heap.io/blog/postgresqls-powerful-new-join-type-lateral
 	
