@@ -53,5 +53,23 @@ WHERE
  * is equivalent to
  * 
  * x <> a OR x <> b OR x <> c
- */  
+ */ 
+
+-- In case subquery returns no rows, then the ANY operator always evaluates to false.
+SELECT
+  title
+FROM
+  film
+WHERE
+  length >= ANY (
+    SELECT
+      MAX(length)
+    FROM
+      film
+    WHERE
+      film_id = 7777
+  );
+
+-- [Use-Case] You defined a function that takes in an array of allowed values
+-- You can then use ANY, IN will not work this particular case.
 

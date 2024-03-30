@@ -11,12 +11,13 @@ INSERT INTO employee_14_demo VALUES
 
 SELECT * FROM employee_14_demo;
 
-UPDATE employee_14_demo SET body = '{"name": "Teriz", "hobbies": ["Movies", "Jogging", "Coding"]}'
+UPDATE employee_14_demo
+SET body = '{"name": "Teriz", "hobbies": ["Movies", "Jogging", "Coding"]}'
 WHERE body->>'name' = 'Teriz';
 
 SELECT DISTINCT 
 	jsonb_array_elements_text(body->'hobbies') AS hobbies
-FROM employee_14_demo; 
+FROM employee_14_demo;
 
 SELECT
 	employee_id,

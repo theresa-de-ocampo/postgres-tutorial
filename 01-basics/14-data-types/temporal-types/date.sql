@@ -47,6 +47,14 @@ SELECT
 FROM
   employee;
 
+SELECT
+  first_name,
+  last_name,
+  AGE(NOW(), hire_date) AS service_length
+FROM
+  employee;
+
+
 -- Calculate age in years, months, and days
 SELECT
   employee_id,

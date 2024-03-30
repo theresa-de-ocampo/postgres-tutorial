@@ -26,8 +26,8 @@ SELECT int4range('(0,6)');  -- [1,6)
  */
 SELECT '(0,6)'::numrange;   -- (0,6)
 SELECT '[1,6)'::numrange;   -- [1,6)
-SELECT '(0,5]'::numrange;   -- (0,6]
-SELECT '[1,5]'::numrange;   -- [0,5]
+SELECT '(0,5]'::numrange;   -- (0,5]
+SELECT '[1,5]'::numrange;   -- [1,5]
 
 
 -- *** Some Features in Postgres
@@ -59,7 +59,7 @@ SELECT int4range(10,20) @> 3;
 SELECT numrange(11.1, 22.2) && numrange(20, 30);
 
 -- Extract upper bound
-SELECT upper(int8range(15,25));
+SELECT upper(int8range(15, 25));
 
 -- Compute the intersection
 SELECT int4range(10, 20) * int4range(15, 25);
@@ -76,6 +76,7 @@ SELECT '(,3]'::int4range;
 SELECT '[,]'::int4range;
 SELECT lower_inf('[1, 4]'::int4range);
 SELECT lower_inf('(,3]'::int4range);
+SELECT upper_inf('[1, 4]'::int4range);
 
 -- Includes no points (and will be normalized to 'empty')
 SELECT '[4,4)'::int4range;

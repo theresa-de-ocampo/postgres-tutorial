@@ -17,7 +17,7 @@ AS $$
 $$;
     
     
-SELECT * FROM get_film ('Al%') ;
+SELECT * FROM get_film ('Al%');
 
 -- If you call the function using the following statement,
 -- Postgres returns a table that consists of one column that holds an array of rows.

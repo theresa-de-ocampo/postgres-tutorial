@@ -126,17 +126,6 @@ LEFT JOIN employee
   ON department.department_id = employee.department_id
 WHERE
   employee.department_id IS NULL;
-
-SELECT
-  department_name,
-  department.department_id,
-  employee.department_id
-FROM
-  department
-FULL OUTER JOIN employee
-  ON department.department_id = employee.department_id
-WHERE
-  employee.department_id IS NULL;
  
 ALTER TABLE employee RENAME TO employee;
 ALTER TABLE department RENAME TO department;

@@ -1,3 +1,4 @@
+-- Universally Unique Identifier - Open Source Softwaare Project
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
 CREATE TABLE customer (

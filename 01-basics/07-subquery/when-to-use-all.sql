@@ -1,5 +1,6 @@
 -- Use ALL instead of (JOINS, ORDER BY, LIMIT) whenever you have a
 -- "Get the top/bottom record in a specific group determined by the other table."
+-- This is useful if you only need the data from the first table.
 
 /**
  * TABLE: students
@@ -12,14 +13,20 @@
  * class_id
  */
 
--- Get the student who scored higher than all scores in class 101.
-
+-- Get the student(s) who scored higher than all scores in class 101.
 SELECT student_name
 FROM students
 WHERE exam_score >= ALL (
   SELECT exam_score
   FROM exam_scores
   WHERE class_id = 101
+);
+
+-- Another Option
+SELECT student_name
+FROM students
+WHERE exam_score >= (
+  SELECT MAX(exam_score) FROM exam_scores WHERE class_id = 1
 );
 
 SELECT
@@ -31,5 +38,4 @@ FROM
 INNER JOIN
   exam_scores ON (student_id)
 WHERE
-  class_id = 101 AND
   exam_score = (SELECT MAX(exam_score) FROM exam_scores WHERE class_id = 101);

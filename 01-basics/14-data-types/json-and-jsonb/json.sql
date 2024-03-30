@@ -73,9 +73,14 @@ FROM "order";
 SELECT json_object_keys(info->'items')
 FROM "order";
 
-/* The json_typeof() function returns the type of the outermost JSON value as a string. It can be number, boolean, null, object, array, and string. */
+/**
+ * The json_typeof() function returns the type of the outermost JSON value as a string.
+ * It can be number, boolean, null, object, array, and string.
+ */
 SELECT json_typeof(info->'items')
 FROM "order";
 
 SELECT json_typeof(info->'items'->'qty')
 FROM "order";
+
+SELECT * FROM "order";

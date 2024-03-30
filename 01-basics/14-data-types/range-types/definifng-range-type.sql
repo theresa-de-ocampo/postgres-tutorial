@@ -1,8 +1,9 @@
 /**
  * Users can define their own range types.
- * The most common reason to do this is to use ranges over subtypes not provided among the built-in range types.
+ * The most common reason to do this is to use ranges over subtypes not provided among the built-in
+ * range types.
  * 
- * When you defined your own range you automatically get a crresponding multirange type.
+ * When you defined your own range you automatically get a corresponding multirange type.
  */
 CREATE TYPE float8range AS RANGE (
   subtype = float8,
@@ -26,8 +27,8 @@ SELECT '[1.234, 5.678]'::float8range;
  * is capable of storing.
  * 
  * For instance, a range type over timestamp could be defined to have a step size of an hour,
- * in which case the canonicalization function would need to round off bounds that weren't a multiple of hour,
- * or perhaps throw an error instead.
+ * in which case the canonicalization function would need to round off bounds that weren't a
+ * multiple of hour, or perhaps throw an error instead.
  */
 
 -- TODO: Study the indexing part

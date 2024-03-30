@@ -2,6 +2,8 @@
 
 -- https://python.plainenglish.io/the-difference-between-distinct-vs-distinct-on-in-postgresql-87ca6ee70450
 
+-- DISTINCT ON keeps only the first row of each set.
+
 CREATE TABLE address_history (
   id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
   person_id INT,

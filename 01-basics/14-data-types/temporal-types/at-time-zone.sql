@@ -1,8 +1,8 @@
 -- https://www.postgresql.org/docs/current/datatype-datetime.html#:~:text=We%20do%20not%20recommend%20using,are%20stored%20internally%20in%20UTC%20.
 
 -- To address these difficulties, we recommend using date/time types that contain both date and time when using time zones. We do not recommend using the type time with time zone (though it is supported by PostgreSQL for legacy applications and for compliance with the SQL standard). PostgreSQL assumes your local time zone for any type containing only date or time.
---
---All timezone-aware dates and times are stored internally in UTC. They are converted to local time in the zone specified by the TimeZone configuration parameter before being displayed to the client.
+
+-- All timezone-aware dates and times are stored internally in UTC. They are converted to local time in the zone specified by the TimeZone configuration parameter before being displayed to the client.
 
 -- https://stackoverflow.com/questions/5876218/difference-between-timestamps-with-without-time-zone-in-postgresql
 

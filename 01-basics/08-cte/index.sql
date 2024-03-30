@@ -1,4 +1,12 @@
 SELECT * FROM film LIMIT 100 ; 
+SELECT * FROM rental;
+
+/**
+ * A Common Table Expression (CTE) is a temporary result set that you can reference within another
+ * SQL statement.
+ * 
+ * CTEs are commonly used to simplify comples joins and subqueries.
+ */
 
 WITH cte_film AS (
 	SELECT
@@ -46,9 +54,10 @@ INNER JOIN cte_rental
 
 
 SELECT
-  count(rental_id) rental_count,
+  staff_id,
   first_name,
-  last_name
+  last_name,
+  count(rental_id) rental_count
 FROM
   rental
 INNER JOIN

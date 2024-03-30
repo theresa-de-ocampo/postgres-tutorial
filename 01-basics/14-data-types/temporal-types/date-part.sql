@@ -41,6 +41,7 @@ In the case of SELECT date_part('week', DATE '2023-01-01');, January 1st, 2023 f
 */
 
 SELECT date_part('week', DATE '2023-01-02');
+SELECT EXTRACT(WEEK FROM DATE '2023-01-02');
 
 -- The date_part function returns a value whose type is float.
 SELECT date_part('year', CURRENT_DATE);
