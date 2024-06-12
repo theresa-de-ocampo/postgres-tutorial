@@ -56,6 +56,8 @@ LEFT JOIN basket_b
 WHERE
   basket_b.id IS NULL;
 
+-- FULL OUTER JOIN combine data from two tables and return all rows from both tables,
+-- including matching and non-matching rows from both sides.
 SELECT
   basket_a.id,
   basket_a.fruit,

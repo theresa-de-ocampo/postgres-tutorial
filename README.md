@@ -14,6 +14,7 @@ Mostly based on [PostgreSQLTutorial.com](https://www.postgresqltutorial.com/)
 - [ ] generate_series
 - [ ] EXIT with block labels
 - [ ] Complete PL/pgSQL
+- [ ] Transactions > Save Point
 
 ## DBeaver shortcuts that are not aligned with VS Code
 

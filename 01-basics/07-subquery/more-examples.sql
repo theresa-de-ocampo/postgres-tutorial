@@ -81,7 +81,8 @@ LIMIT 1;
 
 -- 3.2. SUBQUERIES WITH ANY
 -- Get all employees with department location of 1700
-EXPLAIN ANALYZE
+EXPLAIN
+  (ANALYZE, FORMAT JSON)
 SELECT
   first_name,
   last_name,
@@ -95,7 +96,8 @@ WHERE
     WHERE location_id = 1700
   );
 
-EXPLAIN ANALYZE
+EXPLAIN
+  (ANALYZE, FORMAT JSON)
 SELECT
   first_name,
   last_name,

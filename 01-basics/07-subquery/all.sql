@@ -5,7 +5,7 @@
  * 
  * [HOW IT WORKS]:
  * (1) column_name > ALL (subquery)
- *    evaluates to true if a value is greater than the biggest value returned by the subqery
+ *    evaluates to true if a value is greater than the biggest value returned by the subquery
  * (2) columnd_name >= ALL (subquery)
  *    evaluates to true if a value is greater than or equal to the biggest value returned by the subquery.
  * (3) column_name < ALL (subquery)
@@ -20,7 +20,7 @@
  * In case the subquery returns no rows, then the ALL operator always evaluates to true.
  */
 
--- Find film whose lenth is greater than all of the average lengths per rating.
+-- Find film whose length is greater than all of the average lengths per rating.
 SELECT
   film_id,
   title,
