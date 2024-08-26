@@ -41,9 +41,12 @@ In the case of SELECT date_part('week', DATE '2023-01-01');, January 1st, 2023 f
 */
 
 SELECT date_part('week', DATE '2023-01-02');
-SELECT EXTRACT(WEEK FROM DATE '2023-01-02');
 
--- The date_part function returns a value whose type is float.
+/**
+ * Return type of EXTRACT() is NUMERIC, whereas return type of date_part() is float8.
+ * EXTRACT() complies with SQL standard, date_part() is Postgres specific.
+ */
+SELECT EXTRACT(WEEK FROM DATE '2023-01-02');
 SELECT date_part('year', CURRENT_DATE);
 
 SELECT

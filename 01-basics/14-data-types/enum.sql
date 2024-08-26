@@ -1,7 +1,7 @@
 /**
  * https://stackoverflow.com/questions/10923213/postgres-enum-data-type-or-check-constraint
  * Option 1 - ENUM type
- * Option 2 - CHECK contraint
+ * Option 2 - CHECK constraint
  * Option 3 - Lookup Table
  */
 

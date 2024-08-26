@@ -18,8 +18,26 @@ SELECT * FROM work_shift;
 
 -- To get the current time with time zone, you use the CURRENT_TIME function
 SELECT CURRENT_TIME;
-SELECT CURRENT_TIME(2); -- ??
+
+/**
+ * Formatting. By default, the fractional seconds have a precision of six digits.
+ * You can specify the desired precision between one and six using an argument.
+ * DBeaver auto-formats, use psql to see it.
+ */
+SELECT CURRENT_TIME(2);
+
+
 SELECT LOCALTIME;
+SELECT LOCALTIME(2);
+
+/**
+ * CURRENT_TIME uses the local time zone of the server, while LOCALTIME is affected by the session's
+ * time zone setting. If your session and server time zones are the same, they will return identical
+ * values.
+ */
+SET TIMEZONE = 'Asia/Manila';
+SELECT LOCALTIME, CURRENT_TIME;
+SET TIMEZONE = 'Universal';
 
 -- Convert time with a different time zone:
 -- [TIME with time zone] AT TIME ZONE time_zone
