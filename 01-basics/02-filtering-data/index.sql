@@ -60,6 +60,12 @@ ORDER BY title
 OFFSET 5 ROWS
 FETCH FIRST 5 ROWS ONLY;
 
+SELECT film_id, title
+FROM film
+ORDER BY title
+OFFSET 5
+LIMIT 5;
+
 /* Suppose you want to know the rental information of customer ID 1 and 2. */
 SELECT
   customer_id,

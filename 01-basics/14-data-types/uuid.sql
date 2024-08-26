@@ -1,3 +1,4 @@
+-- Universal Unique Identifier - Open Source Software Project
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
 -- Generates UUID based on the combination of computer's MAC address,

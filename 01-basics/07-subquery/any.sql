@@ -70,6 +70,6 @@ WHERE
       film_id = 7777
   );
 
--- [Use-Case] You defined a function that takes in an array of allowed values
+-- [Use-Case] You defined a function that takes in an ARRAY of allowed values
 -- You can then use ANY, IN will not work this particular case.
 

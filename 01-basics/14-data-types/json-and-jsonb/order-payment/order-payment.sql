@@ -45,6 +45,7 @@ VALUES
     'gcash'
   );
 
+SELECT * FROM royal_order;
 SELECT * FROM royal_payment;
 
 SELECT

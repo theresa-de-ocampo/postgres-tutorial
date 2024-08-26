@@ -10,11 +10,12 @@ Mostly based on [PostgreSQLTutorial.com](https://www.postgresqltutorial.com/)
 - [ ] Search text && || !! : https://www.postgresql.org/docs/current/functions-textsearch.html
 - [ ] Window Functions
 - [ ] citext for email validation
-- [ ] Reading Result of EXPLAIN ANALYZE
 - [ ] generate_series
 - [ ] EXIT with block labels
 - [ ] Complete PL/pgSQL
 - [ ] Transactions > Save Point
+- [ ] paginated_find_recurring_order_by_country
+- [ ] CREATE EVENT TRIGGER vs CREATE TRIGGER for TSVECTOR
 
 ## DBeaver shortcuts that are not aligned with VS Code
 

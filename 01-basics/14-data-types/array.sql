@@ -29,6 +29,7 @@ SELECT * FROM contact;
 /*
  * We can access array elements using index. 
  * Postgres uses one-based numbering for array elements
+ * But for jsonb array, start is 0.
  * */
 SELECT
   concat(first_name, ' ', last_name) AS name,
@@ -68,6 +69,7 @@ FROM contact
 WHERE '(048)-591-3824' = ANY(phones);
 
 -- Postgres provides the unnest() function to expand an array to a list of rows.
+-- Its corresponding jsonb function is jsonb_array_elements
 SELECT
   first_name,
   last_name,

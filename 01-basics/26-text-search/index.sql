@@ -24,7 +24,7 @@
  *     "stop words" like "the", or "a" while finding a match.
  * (2) It implements "stemming" to find derivatives of a root word.
  *     For e.g., stemming will map "runs" and "running" to the root word "run". 
- * (3) Postgres will rank your searchesand will place the best matches at the top of the results.
+ * (3) Postgres will rank your searches and will place the best matches at the top of the results.
  */
 -- Vector Technique
 
@@ -40,7 +40,7 @@
  * 
  * (2) Lexemes
  *        The document during processing is parsed into multiple tokens, which consists of words,
- *        sentences, etc. of the text present in the document. These tokens are are modified to form 
+ *        sentences, etc. of the text present in the document. These tokens are modified to form 
  *        more meaningful entities called lexemes.
  * 
  * (3) Dictionaries
