@@ -51,6 +51,12 @@ SELECT timezone('Europe/Berlin', '2023-05-01 18:21:00');
 SELECT timezone('Europe/Berlin', '2023-05-01 18:21:00'::TIMESTAMPTZ);
 SELECT timezone('Europe/Berlin', TIMESTAMPTZ '2023-05-01 18:21:00');
 
+/**
+ * AT TIME ZONE is the SQL standard.
+ * timezone() is specific to Postgres.
+ * In MySQL, it's convert_tz() 
+ */
+
 
 
 

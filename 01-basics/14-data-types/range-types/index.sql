@@ -7,9 +7,9 @@
  * Use int4range to represent 1, 2, 3, 4, and 5
  * 
  * Sparse range types use [) to represent a range of elements.
- * In this, the bracket indicates inclusion and a parenthesis indicates exclusion.
+ * The bracket indicates inclusion and a parenthesis indicates exclusion.
  * Sparse range types must have canonical functions defined, which converts the storage format to [)
- * And for a sparse range type, we know what the previous value and the following value of a specific value.
+ * For a sparse range type, we know what the previous value and the ff value of a specific value.
  * For example, the value 1 in an int range is preceded by 0 and followed by 2.
  */
 SELECT '(0,6)'::int4range;  -- [1,6)
@@ -21,7 +21,7 @@ SELECT int4range('(0,6)');  -- [1,6)
 
 /**
  * If this is a numeric range, we do not know the value before 1 (0.9999999999... till infinite)
- * and the value after 1 (1.00000000... 1).
+ * and the value after 1 (1.00000000... till infinite).
  * However, continuous range types store accurate elements.
  */
 SELECT '(0,6)'::numrange;   -- (0,6)
@@ -44,13 +44,15 @@ SELECT '[1,5]'::numrange;   -- [1,5]
 
 -- *** Examples of Built-in Range Types
 CREATE TABLE reservation(
-  room int,
+  room INT PRIMARY KEY,
   duration tsrange
 );
 
 INSERT INTO reservation
 VALUES
   (1108, '[2010-01-01 14:30, 2010-01-01 15:30)');
+
+SELECT * FROM reservation;
 
 -- Containment
 SELECT int4range(10,20) @> 3;

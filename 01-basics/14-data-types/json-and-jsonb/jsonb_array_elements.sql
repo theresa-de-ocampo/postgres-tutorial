@@ -83,7 +83,7 @@ WHERE
   body->>'name' LIKE 'T%' ;
   
 
--- 3. SELECT TABLE + JSONB ARRAY
+-- 3. SELECT TABLE + JSONB ARRAY (CROSS JOIN)
 CREATE TABLE clothes (
   id SMALLINT,
   "name" VARCHAR(30),
@@ -152,11 +152,6 @@ CREATE TABLE electronic_product (
   "name" VARCHAR(70),
   details JSONB
 );
-
-SELECT
-  *
-FROM
-  electronic_product;
 
 INSERT INTO
   electronic_product
@@ -249,18 +244,33 @@ VALUES
 
 SELECT * FROM "organization";
 
---SELECT
---  "organization".id AS organization_id,
---  "user".id AS user_id,
---  "user"."name" AS user_name,
---  "user".email AS user_email,
---  "member"."role" AS member_role
---FROM
---  "organization",
---  jsonb_array_elements("organization".members) AS members("member")
---INNER JOIN
---  "user" ON "member".id = "user".id;
+SELECT * FROM "user";
 
+
+SELECT
+  *
+FROM
+  "user"
+INNER JOIN
+  jsonb_array_elements(organization.members) AS "member" ON "member".id = USER.id;
+
+-- Method 1
+SELECT
+  "organization".id AS organization_id,
+  "user".id AS user_id,
+  "user".name AS user_name,
+  "user".email AS user_email,
+  "member"->>'role' AS member_role
+FROM
+  organization,
+  jsonb_array_elements("organization".members) AS "member"
+INNER JOIN
+  "user" ON "user".id = ("member"->>'id')::INT
+ORDER BY
+  organization_id,
+  user_id;
+
+-- Method 2
 SELECT
   "organization".id AS organization_id,
   "user".id AS user_id,
@@ -272,7 +282,10 @@ FROM
 INNER JOIN
   jsonb_array_elements("organization".members) AS members("member") ON TRUE
 INNER JOIN
-  "user" ON "member"->>'id' = CAST("user".id AS TEXT);
+  "user" ON "member"->>'id' = CAST("user".id AS TEXT)
+ORDER BY
+  organization_id,
+  user_id;
 
 /**
  * Use jsonb_array_elements when you need to maintain the JSON structure of the elements for further

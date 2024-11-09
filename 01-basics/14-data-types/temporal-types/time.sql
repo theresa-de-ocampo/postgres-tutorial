@@ -42,6 +42,15 @@ SET TIMEZONE = 'Universal';
 -- Convert time with a different time zone:
 -- [TIME with time zone] AT TIME ZONE time_zone
 SELECT localtime AT TIME ZONE 'UTC-7';
+SELECT localtime AT TIME ZONE 'Asia/Manila';
+
+SHOW TIMEZONE;
+
+-- For some reason, it looks buggy with DBeaver.
+-- Use pgAdmin or psql.
+SELECT
+  CURRENT_TIME AT TIME ZONE 'UTC-7' AS "UTC",
+  CURRENT_TIME AT TIME ZONE 'Asia/Manila' AS "Asia/Manila";
 
 -- Postgres allows you to apply arithmetic operators such as +, -, and * on
 -- time values, and between time and interval values

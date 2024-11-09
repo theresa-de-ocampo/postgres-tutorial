@@ -14,8 +14,8 @@ Mostly based on [PostgreSQLTutorial.com](https://www.postgresqltutorial.com/)
 - [ ] EXIT with block labels
 - [ ] Complete PL/pgSQL
 - [ ] Transactions > Save Point
-- [ ] paginated_find_recurring_order_by_country
 - [ ] CREATE EVENT TRIGGER vs CREATE TRIGGER for TSVECTOR
+- [ ] `SELECT * FROM film; \_text of special_features`
 
 ## DBeaver shortcuts that are not aligned with VS Code
 

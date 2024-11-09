@@ -8,7 +8,7 @@
  */
 
 /**
- * Types of subquries.
+ * Types of subqueries.
  *  (1) Subquery as Scalar Operand
  *  (2) Comparison using Subqueries
  *  (3) Subqueries with ALL, ANY/SOME, IN

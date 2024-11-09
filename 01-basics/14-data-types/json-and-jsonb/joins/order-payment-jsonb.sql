@@ -24,7 +24,7 @@ WHERE
 -- The @> operator is generally more efficient for JSONB containment queries.
 -- The @> operator checks which records have a specifc structure specified by the query.
 -- Whereas, the ? operator checks which wakuli_payment.body->'orders' contain a specific element.
--- They differ in the Indec Condition.
+-- They differ in the Index Condition.
 EXPLAIN ANALYZE
 SELECT
   *
@@ -49,13 +49,6 @@ INNER JOIN
 WHERE
   wakuli_payment.body @> '{"state": "paid"}' AND
   wakuli_order.created_at BETWEEN '2022-12-01' AND '2022-12-31';
-
-SELECT
-  *
-FROM
-  wakuli_payment
-ORDER BY
-  created_at DESC;
 
 
 

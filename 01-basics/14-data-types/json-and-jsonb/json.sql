@@ -3,14 +3,17 @@ CREATE TABLE "order" (
   info JSON NOT NULL
 );
 
-INSERT INTO "order" (info)
+INSERT INTO
+  "order" (info)
 VALUES
   ('{"customer": "Teriz De Ocampo", "items": {"product": "Doritos", "qty": 2 }}'),
   ('{"customer": "Josh William", "items": {"product": "Toy Car", "qty": 1}}'),
   ('{"customer": "Mary Clark", "items": {"product": "Toy Train", "qty": 2}}');
  
-INSERT INTO "order" (info)
-VALUES ('{"customer": "Thita De Ocampo", "items": {"product": {"name": "Diswashing Liquid", "qty": 2}}}');
+INSERT INTO
+  "order" (info)
+VALUES
+  ('{"customer": "Thita De Ocampo", "items": {"product": {"name": "Diswashing Liquid", "qty": 2}}}');
 
 SELECT info FROM "order";
 
@@ -21,10 +24,10 @@ SELECT info->'customer' AS customer FROM "order";
 SELECT info->>'customer' AS customer FROM "order";
 
 /* 
-  Because the -> operator returns a JSON object, you can chain it with the operator ->> to retrieve a specific node.
-  For example, the following statement returns all products sold:
+ * Because the -> operator returns a JSON object,
+ * you can chain it with the operator ->> to retrieve a specific node.
+ * For example, the following statement returns all products sold:
  */
-
 SELECT info->'items'->>'product' AS product
 FROM "order"
 ORDER BY product;
@@ -34,12 +37,12 @@ FROM "order"
 WHERE info->'items'->>'product' = 'Doritos';
 
 /*
-  Who brought 2 products at a time.
-  But this will result in an error:
-    ERROR:  operator does not exist: text = integer
-    LINE 5: WHERE info->'items'->>'qty' = 2;
-    No operator matches the given name and argument types. You might need to add explicit type casts.
-*/
+ * Who brought 2 products at a time.
+ * But this will result in an error:
+ * ERROR:  operator does not exist: text = integer
+ * LINE 5: WHERE info->'items'->>'qty' = 2;
+ * No operator matches the given name and argument types. You might need to add explicit type casts.
+ */
 SELECT
   info->>'customer' AS customer,
   info->'items'->>'product' AS product

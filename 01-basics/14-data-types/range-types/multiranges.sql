@@ -11,7 +11,7 @@ SELECT '{[3,7), [8,9)}'::int4multirange;
  * 
  * The constructor function accepts two or three arguments.
  * The two-argument form contructs a range in standard form (lower bound inclusive, upper bound exclusive).
- * While the three-argument form constructs a range with bounds of the form specifid by the third argument.
+ * While the three-argument form constructs a range with bounds of the form specified by the third argument.
  */
 
 SELECT numrange(1.0, 14);

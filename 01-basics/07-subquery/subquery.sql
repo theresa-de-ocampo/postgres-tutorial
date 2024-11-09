@@ -42,7 +42,7 @@ WHERE
 
 -- Subquery with EXISTS operator
 /**
- * A subquery can be an input of the EXISTS oeprator.
+ * A subquery can be an input of the EXISTS operator.
  * If the subquery returns any row, the EXISTS operator returns true.
  * If the subquery returns no row, the result of EXISTS operator is false.
  * 
