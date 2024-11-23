@@ -20,7 +20,6 @@ DO $$
   
     RAISE NOTICE '% % %', v_record.film_id, v_record.title, v_record.length;
   END;
-  
 $$;
 
 -- Using record variables in the for loop statement

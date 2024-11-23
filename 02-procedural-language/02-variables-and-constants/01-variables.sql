@@ -1,7 +1,20 @@
 /*
  * Variables are scoped to the block in which they're declared, which means, variables are only
- * accessible within the block and ny nested block.
+ * accessible within the block and any nested block.
  * */
+
+-- Declare variables
+DO $$
+  DECLARE
+    counter INT = 1;
+    first_name VARCHAR(75) = 'John';
+    last_name VARCHAR(75) = 'Doe';
+    payment NUMERIC(11, 2) = 20.5;
+
+  BEGIN
+    RAISE NOTICE '% % has been paid % USD', first_name, last_name, payment;
+  END;
+$$;
 
 -- Assigning values to variables
 DO $$
@@ -57,6 +70,11 @@ SELECT NOW(), clock_timestamp();
 /*
  * Copying Data Types
  * You use the %type to declare a variable that holds a value from the database or another variable.
+ * 
+ * Advantages
+ * (1) You don't need to know the type of column or reference being accessed.
+ * (2) If the data type of the referenced column name (or variable) changes,
+ *     you don't need to change the block.
  * */
 DO $$
   DECLARE
@@ -69,7 +87,7 @@ DO $$
     FROM film
     WHERE film_id = 100;
     
-    RAISE NOTICE 'Film title ID 100: %', film_title;
+    RAISE NOTICE 'Film Title ID 100: %', film_title;
   END;
 $$;
 

@@ -1,8 +1,10 @@
-/*
- * PL/pgSQL Row Types
- *    - Used to declare row variables that hold a complete row of a result set.
- *    - Variables of composite types.
- * */
+/**
+ * Row variables or row-type variables are variables of composite types that can hold a complete row
+ * of a result set.
+ * 
+ * row_variable table_name%ROWTYPE
+ * row_variable view_name%ROWTYPE
+ */
 DO $$
   DECLARE selected_actor actor%ROWTYPE;
   
@@ -15,5 +17,4 @@ DO $$
     RAISE NOTICE
       'The name of the actor is % %', selected_actor.first_name, selected_actor.last_name;
   END;
-  
 $$;

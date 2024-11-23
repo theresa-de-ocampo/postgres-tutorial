@@ -11,7 +11,13 @@ DO $$
   
 $$;
 
--- Idk why this is working as well.
+/**
+ * The INTO clause can appear almost anywhere in the SQL command. 
+ * Customarily, it is written either just before or just after the list the select_expressions in
+ * a SELECT command, or at the end of the command for other command types
+ * It is recommended that you follow this convention in case the PL/pgSQL parser becomes stricter
+ * in future versions. 
+ */
 DO $$
   DECLARE actor_count INT = 0;
 

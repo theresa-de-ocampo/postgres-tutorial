@@ -20,47 +20,26 @@ DO $$
       INTO film_count
       FROM film;
       
-      RAISE NOTICE 'The number of films is %s', film_count;
+      RAISE NOTICE 'The number of films is %', film_count;
     END first_block;
 $$;
-
--- Without using the dollar-quoted string syntax,
--- the anonymous block has to be surrounded by single quotes.
-DO '
-  <<first_block>>
-    DECLARE film_count INTEGER = 0;
-  
-    BEGIN
-      SELECT COUNT(*)
-      INTO film_count
-      FROM film;
-      
-      RAISE NOTICE 'The number of films is %', film_count;
-    END first_block
-';
 
 -- SUBBLOCKS
 -- Typically, you divide a large block into smaller, more logical subblocks.
 DO $$
   <<outer_block>>
     DECLARE x INTEGER = 0;
-  
     BEGIN
       x = x + 1;
       
       <<inner_block>>
+        DECLARE y INTEGER = 2;
         BEGIN
-          DECLARE y INTEGER = 2;
-        
           y = x + y;
           RAISE NOTICE 'x = % | y = %', x, y;
         END
       inner_block;
+
     END
   outer_block;
 $$;
-
-
-
-
-
