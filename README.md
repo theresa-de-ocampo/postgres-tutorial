@@ -40,3 +40,20 @@ Mostly based on [PostgreSQLTutorial.com](https://www.postgresqltutorial.com/)
     </tr>
   </tbody>
 </table>
+
+## DBeaver naming that are not aligned with VS Code
+
+<table>
+  <thead>
+    <tr>
+      <th>DBeaver</th>
+      <th>VS Code</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ruler</td>
+      <td>Print Margin</td>
+    </tr>
+  </tbody>
+</table>
